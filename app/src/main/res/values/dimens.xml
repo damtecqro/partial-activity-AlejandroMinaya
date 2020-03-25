@@ -1,3 +1,12 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
+    <dimen name="material_h1">96sp</dimen>
+    <dimen name="material_h2">60sp</dimen>
+    <dimen name="material_h3">48sp</dimen>
+    <dimen name="material_h4">34sp</dimen>
+    <dimen name="material_h5">24sp</dimen>
+    <dimen name="material_h6">20sp</dimen>
+    <dimen name="material_subtitle1">16sp</dimen>
+    <dimen name="material_subtitle2">14sp</dimen>
+    <dimen name="material_body">16sp</dimen>
 </resources>
