@@ -41,9 +41,11 @@ class PokemonListAdapter(private val dataSet: List<Model.PokemonEntry>?) : Recyc
             }
 
             index += (position + 1).toString()
+            var name = dataSet[position].name
+            name = name[0].toUpperCase() + name.substring(1)
 
-            holder.pokemonIndex.text = index;
-            holder.pokemonName.text = dataSet[position].name
+            holder.pokemonIndex.text = index
+            holder.pokemonName.text = name
         }
     }
 }
