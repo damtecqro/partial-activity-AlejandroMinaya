@@ -29,10 +29,9 @@ class ActivityLogin : AppCompatActivity() {
         val passwordField = loginPasswordField;
         val submit = loginButton;
 
-        val profileBundle = intent?.extras?.getBundle("profile");
-        if(profileBundle !== null)
-        usernameField.editText?.setText(profileBundle?.getString("username"))
-        passwordField.editText?.setText(profileBundle?.getString("password"))
+        val prevProfileBundle = intent?.extras?.getBundle("profile");
+        usernameField.editText?.setText(prevProfileBundle?.getString("username"))
+        passwordField.editText?.setText(prevProfileBundle?.getString("password"))
 
         submit.setOnClickListener{
             val username : String = usernameField.editText?.text.toString()
