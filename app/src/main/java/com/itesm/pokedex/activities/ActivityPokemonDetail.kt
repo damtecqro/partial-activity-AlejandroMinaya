@@ -21,6 +21,7 @@ import com.itesm.pokedex.adapters.PokemonMovesListAdapter
 import com.itesm.pokedex.interfaces.Pokemon
 import com.itesm.pokedex.utils.PokeApi
 import com.itesm.pokedex.utils.*
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_pokemon_detail.*
 
 class ActivityPokemonDetail : AppCompatActivity() {
@@ -68,6 +69,10 @@ class ActivityPokemonDetail : AppCompatActivity() {
                     pokemonDetailName.text = toTitleCase(it.name)
                     pokemonDetailNumber.text = prettifyPokemonNumber(it.order)
 
+                    Picasso.Builder(this).build().load(
+                        it.sprites.front_default
+                    ).resize(150, 150).into(pokemonDetailSprite)
+
                     initializeTypes(it.types)
                     initializeStats(it.stats)
                     initializeMoveList(it.moves)
@@ -79,7 +84,7 @@ class ActivityPokemonDetail : AppCompatActivity() {
     private fun initializeTypes(types : List<Pokemon.TypeWrapper>){
         pokemonDetailTypes.removeAllViews()
         for(typeWrapper in types){
-            val newType = Chip(pokemonDetailTypes.context)
+            val newType = Chip(this)
             val typeName = typeWrapper.type.name.toUpperCase()
             newType.text = typeName
             newType.width = WRAP_CONTENT
@@ -96,12 +101,12 @@ class ActivityPokemonDetail : AppCompatActivity() {
         table.removeAllViews()
 
         for(statWrapper in stats) {
-            val tableRow = TableRow(table.context)
+            val tableRow = TableRow(this)
 
-            val statName = TextView(table.context)
+            val statName = TextView(this)
             statName.text = snakeToSpace(statWrapper.stat.name.toUpperCase())
 
-            val statValue = TextView(table.context)
+            val statValue = TextView(this)
             statValue.text = statWrapper.base_stat.toString()
 
             tableRow.addView(statName)

@@ -45,7 +45,7 @@ class PokemonListAdapter(private val dataSet: List<Pokemons.PokemonEntry>?) : Re
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if(dataSet != null) {
-            var index = "#"
+            var index = ""
             if (position + 1 < 10) {
                 index += "00"
             } else if (position + 1 < 100) {

@@ -7,6 +7,7 @@ import com.itesm.pokedex.interfaces.Pokemon
 import com.itesm.pokedex.utils.*
 
 class PokemonMovesListAdapter(private val dataSet: List<Pokemon.MoveWrapper>?) : RecyclerView.Adapter<PokemonMovesListAdapter.ViewHolder>() {
+    val LIMIT = 6
     class ViewHolder(v: TextView) : RecyclerView.ViewHolder(v){
         val moveName : TextView = v
 
@@ -18,6 +19,9 @@ class PokemonMovesListAdapter(private val dataSet: List<Pokemon.MoveWrapper>?) :
 
     override fun getItemCount(): Int {
         if(dataSet != null){
+            if(dataSet.size > LIMIT){
+                return LIMIT
+            }
             return dataSet.size
         }
         return 0

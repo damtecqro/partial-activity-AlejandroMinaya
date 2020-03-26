@@ -100,7 +100,9 @@
                 android:textSize="@dimen/material_h4"/>
             <ScrollView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="5dp"
+                android:background="@drawable/rectangle_stroke">
                 <TableLayout
                     android:id="@+id/pokemonDetailStatsTable"
                     android:stretchColumns="true"
@@ -172,7 +174,9 @@
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/pokemonDetailMovesList"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"/>
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="5dp"
+                android:background="@drawable/rectangle_stroke"/>
         </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
