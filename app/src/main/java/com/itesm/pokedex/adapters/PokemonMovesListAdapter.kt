@@ -4,6 +4,7 @@ import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.itesm.pokedex.interfaces.Pokemon
+import com.itesm.pokedex.utils.*
 
 class PokemonMovesListAdapter(private val dataSet: List<Pokemon.MoveWrapper>?) : RecyclerView.Adapter<PokemonMovesListAdapter.ViewHolder>() {
     class ViewHolder(v: TextView) : RecyclerView.ViewHolder(v){
@@ -24,7 +25,7 @@ class PokemonMovesListAdapter(private val dataSet: List<Pokemon.MoveWrapper>?) :
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         if(dataSet != null){
-            holder.moveName.text = dataSet[position].move.name
+            holder.moveName.text = toTitleCase(snakeToSpace(dataSet[position].move.name))
         }
     }
 }

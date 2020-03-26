@@ -5,7 +5,6 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.itesm.pokedex.R
 import com.itesm.pokedex.adapters.PokemonListAdapter
-import com.itesm.pokedex.interfaces.Model
 import com.itesm.pokedex.utils.PokeApi
 import kotlinx.android.synthetic.main.activity_pokemon_list.*
 
